@@ -1,0 +1,4 @@
+#!/bin/bash
+mogrify -resize 800x400 image*.jpg
+montage image*.jpg -tile 2x2 -geometry +5+5 temp_montage2.jpg
+#mogrify -resize 1280x720 temp_montage2.jpg

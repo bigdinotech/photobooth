@@ -1,0 +1,5 @@
+#!/bin/bash
+#mogrify -resize 968x545 image*.jpg
+montage image*.jpg -tile 2x2 -geometry +5+5 temp_montage2.jpg
+mogrify -resize 1280x720 temp_montage2.jpg
+convert temp_montage2.jpg +append labelYearEnd2014.jpg -append temp_montage2.jpg
