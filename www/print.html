@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Print Page</title>
+    <link type="text/css" rel="stylesheet" href="print.css" />
+    <!-- Put scripts here -->
+    <script src="jquery-1.11.3.js"></script>
+  </head>
+
+  <body>
+    <div class="printdiag">
+      <h1>PRINTING IMAGE</h1>
+      <p>Please give it some time to finish printing.</p>
+      <script>
+      var timeoutTime = 10000;
+      var url = './index.html';
+      $(document).ready(function() {
+        window.setTimeout(function() {
+          $(location).attr('href', url);
+        }, timeoutTime);
+      });
+      </script>
+    </div>
+  </body>
+</html>
