@@ -1,0 +1,18 @@
+.printdiag {
+  width: 97vw;
+  height: 67vh;
+  margin: auto;
+  text-align: center;
+  padding-top: 30vh;
+  background-color: #343434;
+}
+
+h1 {
+  font-size: 4em;
+  color: white;
+}
+
+p {
+  font-size: 2em;
+  color: #BBBBBB;
+}

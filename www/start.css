@@ -1,26 +1,62 @@
-.button {
-	width: 800px;
-	height: 450px;
-	text-align:center;
-	font-size: 100px;
-	font-family:Helvetica;
-	position: absolute;
-	top:240px;
-	left:560px;
+.titlewrap {
+	float: left;
+	background-color: #003399;
+	width: 50%;
+	height: 100vh;
+	margin-top: -8px;
 }
 
 .title {
-	width: 800px;
-	height: 60px;
-	text-align: center;
-	position: absolute;
-	top:145px;
-	left:560px;
-	font-size: 50px;
-	background-color: #003399;
+	font-size: 55px;
+	font-family: sans-serif;
 	color: white;
+	margin: auto;
+	text-align: center;
+	padding-top: 50%;
 }
 
+.ready {
+	font-size: 30px;
+	font-family: sans-serif;
+	color: #DEDEDE;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+
+.wrapper {
+	float: right;
+	background-color: #7799DD;
+	width: 50%;
+	height: 100vh;
+	margin-top: -8px;
+}
+
+.dial {
+	margin: auto;
+	width: 90%;
+	height: 90vh;
+	margin-top: 5%;
+}
+
+td {
+	padding: 5% 15% 5% 15%;
+	color: #333333;
+	background-color: #88AAFF;
+	width: 30%;
+	border-radius: 5px;
+}
+
+span {
+	color: white;
+	font-size: 2em;
+	font-family: Arial;
+}
+
+
 body {
-	background-color: #0066CC;
+	background: url('./startbackground.gif');
+	background-size: cover;
 }

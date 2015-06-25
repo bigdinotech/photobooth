@@ -1,22 +1,25 @@
 .photogrid {
-	position: absolute;
-	border: 0px;
-	border-collapse: collapse;
-}
-
-thead, th {
-	height: 20px;
-	font-size: 15px;
-	padding: 0px;
+	margin-left:-10px;
+	margin-top:-10px;
 }
 
 td {
 	padding: 0px;
-	margin: 0px;
 }
 
 img {
-	width: 960px;
-	height: 530px;
-	border-spacing: 0px;
+	width: 50vw;
+	height: 45vh;
+	margin: -2px -1px -6px -1px;
+}
+
+.instrRow {
+	width: 100vw;
+	height: 5vh;
+	background-color: red;
+}
+
+.instrCol {
+	color: white;
+	text-align: center;
 }

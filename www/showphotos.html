@@ -3,22 +3,25 @@
 	<head>
 		<title>Photo Showcase</title>
 		<link type="text/css" rel="stylesheet" href="showphotos.css" />
+		<script src="jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="showphotos.js"></script>
 	</head>
-	
+
 	<body>
 		<table class="photogrid">
-			<thead>
-				<th colspan="2">Photo Previews</th>
-			</thead>
 			<tbody>
 				<tr>
-					<td><img src="./placeholder.png" /></td>
-					<td><img src="./placeholder.png" /></td>
+					<td><img id='1' src="./placeholder.png" /></td>
+					<td><img id='2' src="./placeholder.png" /></td>
 				</tr>
-				
+				<tr class="instrRow">
+					<td class="instrCol" colspan="2">
+						Click on a picture to retake it. Otherwise, printing will occur in 10 seconds.
+					</td>
+				</tr>
 				<tr>
-					<td><img src="./placeholder.png" /></td>
-					<td><img src="./placeholder.png" /></td>
+					<td><img id='3' src="./placeholder.png" /></td>
+					<td><img id='4' src="./placeholder.png" /></td>
 				</tr>
 			</tbody>
 		</table>
