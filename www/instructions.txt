@@ -1,0 +1,8 @@
+running the application as a webserver does not work 
+becuase of permission issues not being able to access the camera hardware
+
+need to run:
+php5 -S 0.0.0.0:8000
+or simply run ./launch
+
+then browse to x.x.x.x:8000

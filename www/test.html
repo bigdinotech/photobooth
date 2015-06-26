@@ -1,0 +1,20 @@
+<html>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<h1>It works!</h1>
+<p>This is the default web page for this server.</p>
+<p>The web server software is running but no content has been added, yet.</p>
+<script>
+function testPHP(){
+        $.get("takedslrphoto.php?photofilename=tst.jpg");
+        return false;
+}
+
+$(document).ready(function(){
+            //start initial requests
+            testPHP();
+});
+</script>
+</body>
+</html>
