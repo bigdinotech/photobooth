@@ -1,6 +1,6 @@
 <?php
 $filename = $_GET["photofilename"];
-$command = "gphoto2 --capture-image-and-download --filename " . $filename;
+$command = "gphoto2 --capture-image-and-download --force-overwrite --filename " . $filename;
 exec($command);
 if(file_exists($filename))
 {

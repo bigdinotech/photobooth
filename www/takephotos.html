@@ -27,5 +27,20 @@
     </div>
     </a>
   </body>
+<script>
+function takeFourPhotos(){
+	//var url="takedslrphoto.php?photofilename=image";
+	var url="takepicamphoto.php?photofilename=image";
+	for(i = 0; i <4; i++)
+	{
+		//display a count-down timer of some sort
+		$.get(url.concat(i.toString(), ".jpg")); //take photo
+	}
+	return false;
+}
 
+$(document).ready(function(){
+    takeFourPhotos();
+});
+</script>
 </html>
