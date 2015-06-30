@@ -23,11 +23,21 @@
     </div>
   </body>
   <script>
-    function assemblePhotos(){
+    function assemblePhotos()
+	{
+		var url="assembleSimple.php?photofilename=montage.jpg";
+		$.get(url); //assemble photo
     }
 
     function printPhoto()
     {
+		var url="printphoto.php?photofilename=montage.jpg";
+		$.get(url); //print photo
     }
-</script>
+	
+	$(document).ready(function(){
+		assemblePhotos();
+		//printPhoto();
+	});
+	</script>
 </html>

@@ -16,6 +16,6 @@ $(document).ready(function() {
 });
 
 function gotophotos() {
-  var url = './takephotos.html?PHOTO=1';
+  var url = './takephotos.html?PHOTO=99';
   $(location).attr('href', url);
 }
