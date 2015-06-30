@@ -1,6 +1,5 @@
 .photogrid {
-	margin-left:-10px;
-	margin-top:-10px;
+	margin: auto;
 }
 
 td {
@@ -8,18 +7,32 @@ td {
 }
 
 img {
-	width: 50vw;
-	height: 45vh;
-	margin: -2px -1px -6px -1px;
+	width: 40vw;
+	height: 35vh;
+	margin: -2px -1px -6px -2px;
 }
 
 .instrRow {
-	width: 100vw;
-	height: 5vh;
-	background-color: red;
+	background-color: #1D99D4;
 }
 
 .instrCol {
 	color: white;
+	font-size: 1.1em;
 	text-align: center;
+}
+
+.printbutton {
+	background-color: #074C62;
+	color: #CEE6ED;
+	width: 90%;
+	padding: 5% 0 5% 0;
+	margin: 5% auto 5% auto;
+	text-align: center;
+	font-size: 2.5em;
+	border-radius: 10px;
+}
+
+body {
+	background-color: #616365;
 }

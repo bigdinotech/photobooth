@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  var timeoutTime = 10000;
+  var timeoutTime = 20000;
   window.setTimeout(function() {
     $(location).attr('href', './print.html');
   }, timeoutTime);
-  
+
   $('#1').click(function() {
     $(location).attr('href', './takephotos.html?PHOTO=1');
   });
@@ -15,5 +15,9 @@ $(document).ready(function() {
   });
   $('#4').click(function() {
     $(location).attr('href', './takephotos.html?PHOTO=4');
+  });
+
+  $('.printbutton').click(function() {
+    $(location).attr('href', './print.html');
   });
 });
