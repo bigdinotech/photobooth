@@ -1,8 +1,9 @@
-.ideas {
-  width: 75vw;
-  height: 50vh;
-  margin: auto;
-  background-color: #787878;
+.liveview {
+  width: 80vw;
+  height: 75vh;
+  margin: 2% auto 2% auto;
+  background-color: #adcbe3;
+  box-shadow: 10px 10px 5px;
 }
 
 li {
@@ -31,4 +32,8 @@ a:link {
 
 a:visited {
   text-decoration: none;
+}
+
+body {
+  background-color: #2a4d69;
 }

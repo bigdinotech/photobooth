@@ -5,6 +5,7 @@
   text-align: center;
   padding-top: 30vh;
   background-color: #343434;
+  border-radius: 2%;
 }
 
 h1 {
@@ -15,4 +16,8 @@ h1 {
 p {
   font-size: 2em;
   color: #BBBBBB;
+}
+
+body {
+  background-color: #232323;
 }

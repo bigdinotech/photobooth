@@ -1,6 +1,6 @@
 .titlewrap {
 	float: left;
-	background-color: #003399;
+	background-color: #03396C;
 	width: 50%;
 	height: 100vh;
 	margin-top: -8px;
@@ -28,7 +28,7 @@
 
 .wrapper {
 	float: right;
-	background-color: #7799DD;
+	background-color: #6497B1;
 	width: 50%;
 	height: 100vh;
 	margin-top: -8px;
@@ -43,8 +43,8 @@
 
 td {
 	padding: 5% 15% 5% 15%;
-	color: #333333;
-	background-color: #88AAFF;
+	color: #011f4b;
+	background-color: #b3cde0;
 	width: 30%;
 	border-radius: 5px;
 }

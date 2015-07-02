@@ -24,20 +24,20 @@
   </body>
   <script>
     function assemblePhotos()
-	{
-		var url="assembleSimple.php?photofilename=montage.jpg";
-		$.get(url); //assemble photo
+    {
+      var url="assembleSimple.php?photofilename=montage.jpg";
+		  $.get(url); //assemble photo
     }
 
     function printPhoto()
     {
-		var url="printphoto.php?photofilename=montage.jpg";
-		$.get(url); //print photo
+      var url="printphoto.php?photofilename=montage.jpg";
+		  $.get(url); //print photo
     }
-	
-	$(document).ready(function(){
-		assemblePhotos();
-		//printPhoto();
-	});
-	</script>
+
+    $(document).ready(function() {
+      assemblePhotos();
+      //printPhoto();
+    });
+</script>
 </html>
