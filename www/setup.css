@@ -5,7 +5,7 @@
   text-align: center;
   font-size: 5em;
   font-family: sans-serif;
-  color: #616365;
+  color: #809999;
 }
 
 .buttonwrapper {
@@ -13,7 +13,7 @@
   height: 70vh;
   text-align: center;
   margin: auto;
-  background-color: #858585;
+  background-color: #809999;
   padding: 1% 0 1% 0;
 }
 
@@ -21,14 +21,14 @@ p {
   padding: 2% 0 2% 0;
   font-size: 2.5em;
   font-family: monospace;
-  color: #DE4311;
+  color: #ff5722;
 }
 
 div div {
   display: inline-block;
   border-radius: 5px;
   margin: 5px auto 5px auto;
-  background-color: #BFBEBE;
+  background-color: #ffeead;
 }
 
 #picam {
@@ -45,7 +45,7 @@ div div {
 
 #start {
   width: 70vw;
-  color: #07624A;
+  color: #96ceb4;
   padding: 2% 0 2% 0;
   font-size: 2.5em;
   font-family: monospace;
