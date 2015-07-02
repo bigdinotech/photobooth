@@ -1,23 +1,48 @@
 $(document).ready(function() {
-  var timeoutTime = 20000;
+  var timeoutTime = 300000;
   window.setTimeout(function() {
     $(location).attr('href', './print.html');
   }, timeoutTime);
 
-  $('#1').click(function() {
-    $(location).attr('href', './takephotos.html?PHOTO=1');
-  });
-  $('#2').click(function() {
-    $(location).attr('href', './takephotos.html?PHOTO=2');
-  });
-  $('#3').click(function() {
-    $(location).attr('href', './takephotos.html?PHOTO=3');
-  });
-  $('#4').click(function() {
-    $(location).attr('href', './takephotos.html?PHOTO=4');
-  });
-
   $('.printbutton').click(function() {
     $(location).attr('href', './print.html');
   });
+  
+  $('#iframeContainer0').click(function() {
+    var filename = 'image0.jpg'
+	takePhoto(filename);
+	window.clearTimeout();
+	window.setTimeout(300000);
+	document.getElementById('imageframe0').contentWindow.location.reload();
+  });
+  
+  $('#iframeContainer1').click(function() {
+    var filename = 'image1.jpg'
+	takePhoto(filename);
+	window.clearTimeout();
+	window.setTimeout(300000);
+	document.getElementById('imageframe1').contentWindow.location.reload();
+  });
+  
+  $('#iframeContainer2').click(function() {
+    var filename = 'image2.jpg'
+	takePhoto(filename);
+	window.clearTimeout();
+	window.setTimeout(300000);
+	document.getElementById('imageframe2').contentWindow.location.reload();
+  });
+  
+  $('#iframeContainer3').click(function() {
+    var filename = 'image3.jpg'
+	takePhoto(filename);
+	window.clearTimeout();
+	window.setTimeout(300000);
+	document.getElementById('imageframe3').contentWindow.location.reload();
+  });
+  
 });
+
+function takePhoto(filename){
+	var url="takedslrphoto.php?photofilename=";
+	$.get(url.concat(filename)); //take photo
+}

@@ -36,3 +36,10 @@ img {
 body {
 	background-color: #2a4d69;
 }
+
+iframe{
+   width: 320px;
+   height: 220px;
+   overflow: hidden;
+   pointer-events:none;
+}
