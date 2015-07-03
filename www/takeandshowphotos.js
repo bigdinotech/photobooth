@@ -97,6 +97,7 @@ function takeFourPhotos(){
 						var filename = 'image3.jpg';
 						takePhoto(filename);
 						document.getElementById('imageframe3').contentWindow.document.location.href="image3.php";
+						document.getElementById('instructiontr').style.visibility = "visible";
 					}, 5000);
 				}, 15000);
 			}, 15000);
@@ -120,10 +121,11 @@ function displayPlaceholders() {
 	document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
 }
 $(document).ready(function(){
+	document.getElementById('instructiontr').style.visibility = "hidden";
 	displayPlaceholders();
 	setTimeout(function() {
 		takeFourPhotos();
-	}, 10000);
+	}, 1000);
 	console.log("done 4 photos?");
     
 });

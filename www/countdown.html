@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="countdown">5</div>
+	</body>
+	
+	<audio id="beep" preload="auto">
+		<source src="beep.mp3"></source>
+	</audio>
+	
+	<script type="text/javascript">
+	  var seconds;
+	  var temp;
+	  
+	  function countdown() {
+		seconds = document.getElementById('countdown').innerHTML;
+		seconds = parseInt(seconds, 10);
+	 
+		if (seconds == 1) {
+		  temp = document.getElementById('countdown');
+		  temp.innerHTML = "SMILE";
+		  return;
+		}
+	 
+		seconds--;
+		//var beep = new Audio('beep.mp3');
+		beep.load();
+		beep.play();
+		temp = document.getElementById('countdown');
+		temp.innerHTML = seconds;
+		timeoutMyOswego = setTimeout(countdown, 1000);
+	  } 
+	 
+	  countdown();
+	</script>
+</html>
