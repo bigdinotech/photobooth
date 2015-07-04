@@ -1,0 +1,7 @@
+.centeredCounter {
+  height: 70vh;
+  font-size: 60pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}​
