@@ -20,9 +20,9 @@ div {
 	text-align: center;
 	font-family: monospace;
 	margin: auto;
-	float: left;
 	width: 49vw;
 	height: 97vh;
+	left: 25%;
 	position: absolute;
 }
 
