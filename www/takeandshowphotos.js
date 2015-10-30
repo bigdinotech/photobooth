@@ -85,7 +85,10 @@ function takePhotos(){
 		  if (--photoCount) photoLoop(photoCount, imageID);
 		  if(photoCount == 0)
 		  {
-			document.getElementById('instructiontr').style.visibility = "visible";
+			setTimeout(function() {
+			  document.getElementById('instructiontd').innerHTML= "<p><strong>RETAKING</strong>: Click on the desired picture to be retaken.</p><p><strong>PRINT</strong>: Click on the Print button.</p>";
+		      document.getElementById('buttontd').style.visibility = "visible";
+	        }, 12000);
 			enableRetake();
 		  }
 	   }, 15000)
@@ -107,7 +110,8 @@ function initializePhotoGrid() {
 	document.getElementById('imageframe1').contentWindow.document.location.href="imageplaceholder.php";
 	document.getElementById('imageframe2').contentWindow.document.location.href="imageplaceholder.php";
 	document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
-	document.getElementById('instructiontr').style.visibility = "hidden";
+	document.getElementById('buttontd').style.visibility = "hidden";
+	document.getElementById('instructiontd').innerHTML= "<p>Please look at the external camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
 	disableRetake();
 }
 

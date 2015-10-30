@@ -1,0 +1,25 @@
+body {
+	background-color: #2a4d69;
+}
+
+input[type="text"]
+{
+    font-size:48px;
+}
+
+input[type=submit] 
+{
+    background-color: #03396c;
+	color: white;
+	width: 80%;
+	padding: 5% 0 5% 0;
+	margin: 5% auto 5% auto;
+	text-align: center;
+	font-size: 2.5em;
+	border-radius: 10px;
+}
+
+.emailform {
+	margin: auto;
+}
+

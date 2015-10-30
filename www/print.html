@@ -9,23 +9,33 @@
 
   <body>
     <div class="printdiag">
-      <h1>PRINTING IMAGE</h1>
-      <p>Please give it some time to finish printing.</p>
-      <script>
-      var timeoutTime = 10000;
-      var url = './start.html';
-      $(document).ready(function() {
-        window.setTimeout(function() {
-          $(location).attr('href', url);
-        }, timeoutTime);
-      });
-      </script>
+	  <table class="printtable" align="center">
+		<tr>
+		  <td id="messagetd">
+		  </td>
+		</tr>
+	  </table>
+	  <table align="center">
+		<tr id="emailtr">
+		  <td>
+		    <p><strong>Would you like the photo emailed to you?</strong></p>
+		  </td>
+		  <td id='buttontd'>
+			<div class="yesEmailbutton">
+			  <strong>YES</strong>
+			</div>
+			<div class="noEmailbutton">
+			  <strong>NO</strong>
+			</div>
+		  </td>
+		</tr>
+	  </table>
     </div>
   </body>
   <script>
     function assemblePhotos()
     {
-      var url="assembleSimple.php?photofilename=montage.jpg";
+      var url="assembleLabel.php?photofilename=montage.jpg";
 		  $.get(url); //assemble photo
     }
 
@@ -36,8 +46,21 @@
     }
 
     $(document).ready(function() {
-      assemblePhotos();
-      //printPhoto();
+	  var timeoutTime = 10000;
+	  timeoutHandler = window.setTimeout(function() {
+        document.getElementById('emailtr').style.visibility = "visible";
+		document.getElementById('messagetd').innerHTML= "<p><h1>PRINTING IMAGE</h1> <p>Please give it some time to finish printing.</p><p>"
+      }, timeoutTime);
+	  $('.yesEmailbutton').click(function() {
+		$(location).attr('href', './email.html');
+	  });
+	  $('.noEmailbutton').click(function() {
+		$(location).attr('href', './info.html');
+	  });
+	  document.getElementById('emailtr').style.visibility = "hidden";
+	  document.getElementById('messagetd').innerHTML= "<p><h1>ASSEMBLING IMAGE</h1><p>"
+	  assemblePhotos();
+      printPhoto();
     });
 </script>
 </html>
