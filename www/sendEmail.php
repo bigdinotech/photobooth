@@ -4,8 +4,8 @@ require("Mail/mime.php");
 
 $from = "xxx@gmail.com";
 $to = $_POST['email'];
-$message = "Photobooth photos attached";
-$subject = "NSD Photobooth District Family Fun Day";
+$message = "xxxxx";
+$subject = "xxxxx";
 
 $host = "smtp.gmail.com";
 $username = "xxx";
@@ -20,7 +20,7 @@ $headers = array ('From' => $from,
 $mime = new Mail_mime();
 $mime->setTXTBody($message);
 $mime->setHTMLBody(nl2br($message));
-$mime->addAttachment($filename,'application/octet-stream');
+$mime->addAttachment($filename,'image/jpg');
 
 $body = $mime->get();
 $headers = $mime->headers($headers);
@@ -37,6 +37,22 @@ echo( "<p>" . $mail->getMessage() . "</p>" );
 } else {
 echo( "<p>Message successfully sent!</p>" );
 }
+
+/* attempt to send mms via email to most common providers */
+$to  = $_POST['cellnum'] . "@mms.att.net";	//ATT
+$mail = $smtp->send( $to, $headers, $body );
+
+$to  = $_POST['cellnum'] . "@vzwpix.com";	//Verizon
+$mail = $smtp->send( $to, $headers, $body );
+	
+$to  = $_POST['cellnum'] . "@tmomail.net";	//T-Mobile
+$mail = $smtp->send( $to, $headers, $body );
+		
+$to  = $_POST['cellnum'] . "@messaging.sprintpcs.com";	//Sprint
+$mail = $smtp->send( $to, $headers, $body );
+			
+$to  = $_POST['cellnum'] .  "@msg.fi.google.com"; //Google-Fi
+$mail = $smtp->send( $to, $headers, $body );
 
 header('Location: info.html');
 exit;
