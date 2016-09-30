@@ -11,8 +11,16 @@ $host = "smtp.gmail.com";
 $username = "xxx";
 $password = "xxx";
 
-$filename = "montage.jpg";
+//read counter value and increment by 1
+$countvalue = intval(file_get_contents('counter'));
+$newcountvalue = intval($countvalue) + 1;
+file_put_contents("counter", $newcountvalue);
 
+//make a copy of the montage.jpg to be sent
+$filename = "montage" .  intval($countvalue) . ".jpg";
+copy("montage.jpg", $filename);
+
+//send Email with attached photo
 $headers = array ('From' => $from,
       'To' => $to,
       'Subject' => $subject);
@@ -53,6 +61,10 @@ $mail = $smtp->send( $to, $headers, $body );
 			
 $to  = $_POST['cellnum'] .  "@msg.fi.google.com"; //Google-Fi
 $mail = $smtp->send( $to, $headers, $body );
+
+//upload to dropbox
+$command = "./scripts/dropbox_uploader.sh upload " . $filename . " " . $filename;
+exec($command);
 
 header('Location: info.html');
 exit;

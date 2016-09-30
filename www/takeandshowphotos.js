@@ -91,7 +91,7 @@ function takePhotos(){
 	        }, 12000);
 			enableRetake();
 		  }
-	   }, 15000)
+	   }, 10000)
 	})(photoCount, imageID);
 }
 
