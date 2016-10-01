@@ -38,12 +38,15 @@ $smtp = Mail::factory( 'smtp', array('host' => $host,
           'username' => $username,
           'password' => $password ) );
 
-$mail = $smtp->send( $to, $headers, $body );
-
-if ( PEAR::isError($mail) ) {
-echo( "<p>" . $mail->getMessage() . "</p>" );
-} else {
-echo( "<p>Message successfully sent!</p>" );
+if(filter_var($to, FILTER_VALIDATE_EMAIL)) 
+{
+	$mail = $smtp->send( $to, $headers, $body );
+	
+	if ( PEAR::isError($mail) ) {
+	echo( "<p>" . $mail->getMessage() . "</p>" );
+	} else {
+	echo( "<p>Message successfully sent!</p>" );
+	}
 }
 
 /* attempt to send mms via email to most common providers */
