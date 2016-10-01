@@ -4,19 +4,20 @@ body {
 
 input[type="text"]
 {
-    font-size:48px;
+    font-size:40px;
 }
 
 input[type=submit] 
 {
     background-color: #03396c;
 	color: white;
-	width: 80%;
-	padding: 5% 0 5% 0;
-	margin: 5% auto 5% auto;
+	width: 60%;
+	height: 2.0em;
+	//padding: 5% 0 5% 0;
+	//margin: 5% auto 5% auto;
 	text-align: center;
-	font-size: 2.5em;
-	border-radius: 10px;
+	font-size: 2.0em;
+	border-radius: 8px;
 }
 
 .emailform {
