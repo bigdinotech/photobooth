@@ -69,6 +69,10 @@ $mail = $smtp->send( $to, $headers, $body );
 $command = "./scripts/dropbox_uploader.sh upload " . $filename . " " . $filename;
 exec($command);
 
+//copy montage into montage dir
+$command =  "mv " . $filename . " ./montages/" . $filename;
+exec($command);
+
 header('Location: info.html');
 exit;
 ?>
