@@ -80,7 +80,7 @@ function takePhotos(){
 	        }, 12000);
 			enableRetake();
 		  }
-	   }, 10000)
+	   }, 12000)
 	})(photoCount, imageID);
 }
 

@@ -91,7 +91,7 @@ function takePhotos(){
 	        }, 12000);
 			enableRetake();
 		  }
-	   }, 10000)
+	   }, 12000)
 	})(photoCount, imageID);
 }
 
@@ -111,7 +111,7 @@ function initializePhotoGrid() {
 	document.getElementById('imageframe2').contentWindow.document.location.href="imageplaceholder.php";
 	document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
 	document.getElementById('buttontd').style.visibility = "hidden";
-	document.getElementById('instructiontd').innerHTML= "<p>Please look at the external camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
+	document.getElementById('instructiontd').innerHTML= "<p>Please look at the DSLR camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
 	disableRetake();
 }
 
