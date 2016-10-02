@@ -1,9 +1,12 @@
 
 $(document).ready(function() {
-  var url = './takeandshowphotos.html';
-  $('html').click(function() {
-    $('body').fadeOut(2000, function() {
-      $(location).attr('href', url);
-    });
+	
+  $('.banner4').click(function() {
+    $(location).attr('href', './takeandshowphotos.html');
   });
+  
+  $('.largelogo').click(function() {
+    $(location).attr('href', './takeandshowphotoslogo.html');
+  });
+
 });

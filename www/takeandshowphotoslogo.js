@@ -3,11 +3,11 @@ var timeoutHandler;
 $(document).ready(function() {
   var timeoutTime = 300000;
   timeoutHandler = window.setTimeout(function() {
-    $(location).attr('href', './assemble4banner.html');
+    $(location).attr('href', './assemblelogo.html');
   }, timeoutTime);
 
   $('.printbutton').click(function() {
-    $(location).attr('href', './assemble4banner.html');
+    $(location).attr('href', './assemblelogo.html');
   });
   
   $('#iframeContainer0').click(function() {
@@ -47,17 +47,6 @@ $(document).ready(function() {
 	}, 5000);
   });
   
-  $('#iframeContainer3').click(function() {
-    var filename = 'image3.jpg'
-	window.clearTimeout(timeoutHandler);
-	timeoutHandler = window.setTimeout(30000);
-	document.getElementById('imageframe3').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() { 
-	  takePhoto(filename);
-	  document.getElementById('imageframe3').contentWindow.document.location.href="image3.php";
-	}, 5000);
-  });
-  
 });
 
 function takePhoto(filename){
@@ -66,7 +55,7 @@ function takePhoto(filename){
 }
 
 function takePhotos(){
-	var photoCount = 4;
+	var photoCount = 3;
 	var imageID = 0;
 	(function photoLoop (photoCount, imageID) {
 		var filename = "image";
@@ -109,9 +98,9 @@ function initializePhotoGrid() {
 	document.getElementById('imageframe0').contentWindow.document.location.href="imageplaceholder.php";
 	document.getElementById('imageframe1').contentWindow.document.location.href="imageplaceholder.php";
 	document.getElementById('imageframe2').contentWindow.document.location.href="imageplaceholder.php";
-	document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
+	document.getElementById('imageframe3').contentWindow.document.location.href="imagelogo.php";
 	document.getElementById('buttontd').style.visibility = "hidden";
-	document.getElementById('instructiontd').innerHTML= "<p>Please look at the external camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
+	document.getElementById('instructiontd').innerHTML= "<p>Please look at the DSLR camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
 	disableRetake();
 }
 
@@ -128,7 +117,6 @@ function enableRetake()
 	document.getElementById('iframeContainer0').style.pointerEvents = 'all';
 	document.getElementById('iframeContainer1').style.pointerEvents = 'all';
 	document.getElementById('iframeContainer2').style.pointerEvents = 'all';
-	document.getElementById('iframeContainer3').style.pointerEvents = 'all';
 }
 
 $(document).ready(function(){
