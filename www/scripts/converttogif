@@ -1,0 +1,2 @@
+convert capt*.jpg montage.gif
+rm capt*.jpg

@@ -1,0 +1,22 @@
+.centeredCounter {
+  height: 80vh;
+  font-size: 70pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+  color: white;
+}
+
+p {
+  font-size: 2em;
+  color: white;
+}
+
+body {
+  background-color: #232323;
+  color: white;
+}

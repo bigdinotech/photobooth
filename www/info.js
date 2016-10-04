@@ -8,5 +8,9 @@ $(document).ready(function() {
   $('.largelogo').click(function() {
     $(location).attr('href', './takeandshowphotoslogo.html');
   });
+  
+  $('.gifmode').click(function() {
+    $(location).attr('href', './gifInfo.html');
+  });
 
 });

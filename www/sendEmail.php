@@ -16,9 +16,13 @@ $countvalue = intval(file_get_contents('counter'));
 $newcountvalue = intval($countvalue) + 1;
 file_put_contents("counter", $newcountvalue);
 
-//make a copy of the montage.jpg to be sent
-$filename = "montage" .  intval($countvalue) . ".jpg";
-copy("montage.jpg", $filename);
+//make a copy of the montagefile to be sent
+$origfilename = $_GET["montagefile"];
+$ext = pathinfo($origfilename, PATHINFO_EXTENSION);
+$filename = "montage" .  intval($countvalue) . "." .$ext;
+copy($origfilename, $filename);
+
+
 
 //send Email with attached photo
 $headers = array ('From' => $from,

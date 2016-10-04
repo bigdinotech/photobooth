@@ -4,12 +4,12 @@
 		<title>Email</title>
 		<link type="text/css" rel="stylesheet" href="email.css" />
 		<script src="jquery-1.11.3.js"></script>
-		<script type="text/javascript" src="email.js"></script>
+		<script type="text/javascript" src="CSJSRequestObject.js"></script>
 	</head>
 
 	<body>
 	  <div class="emailform">
-	  <form name="emailphotoform" method="post" action="sendEmail.php">
+	  <form id="emailformid" name="emailphotoform" method="post" action="sendEmail.php">
 	    <table align="center">
 		  <tr>
 			<td>
@@ -34,11 +34,24 @@
 		  </tr>
 		  <tr>
 		    <td colspan="2" align="center">
-			  <img id="fourbanner"; src="montage.jpg"; style= "width: 50%"; align="center">
+			  <img id="montageimage" style= "width: 50%" align="center">
 		    </td>
 		  </tr>
 		</table>
 		</div>
 	  </form>
 	</body>
+	
+	<script>
+
+	$(document).ready(function(){
+		var montagefile = Request.QueryString("montagefile");
+		console.log(montagefile);
+		document.getElementById("montageimage").src=montagefile;
+		var url="sendEmail.php?montagefile=" + montagefile;
+		document.getElementById("emailformid").action=url;
+		console.log(url);
+	});
+	</script>
+	
 </html>

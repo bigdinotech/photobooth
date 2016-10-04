@@ -16,23 +16,13 @@ div {
 	color: #121a24;
 }
 
-.info {
-	text-align: center;
-	font-family: monospace;
-	margin: auto;
-	float: left;
-	width: 49vw;
-	height: 97vh;
-	position: absolute;
-}
-
 .layoutpage {
 	text-align: center;
 	font-family: sans-serif;
 	margin: auto;
-	float: right;
-	width: 49vw;
-	height: 97vh;
+	float: center;
+	width: auto;
+	height: auto;
 }
 
 #layoutselect {
@@ -53,6 +43,6 @@ ul {
 }
 
 body {
-	background: url('./startbackground.gif');
-	background-size: cover;
+	//background: url('./startbackground.gif');
+	//background-size: cover;
 }
