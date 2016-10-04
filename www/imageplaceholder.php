@@ -1,3 +1,3 @@
 <?php
-echo '<img src="miniplaceholder.png">';
+echo '<img src="./images/miniplaceholder.png">';
 ?>

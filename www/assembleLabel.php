@@ -1,7 +1,7 @@
 <?php
 $filename = $_GET["photofilename"];
 //$labelname = $_GET["labelfilename"];
-$labelfilename = "label.jpg";
+$labelfilename = "./images/label.jpg";
 
 //do some cleanup
 $command = "rm " . "temp_montage2.jpg";

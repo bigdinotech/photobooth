@@ -1,3 +1,3 @@
 <?php
-echo '<img src="minilogo.jpg">';
+echo '<img src="./images/minilogo.jpg">';
 ?>
