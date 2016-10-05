@@ -4,7 +4,7 @@ var temp;
 function takegifPhotos()
 {
   var url="takegifphotos.php";
-  $.get(url); //assemble photo
+  $.get(url); //take photos
 }
 function countdown() 
 {
@@ -36,8 +36,6 @@ $(document).ready(function(){
 	countdown();
 	setTimeout(function() {
 		takegifPhotos();
-		//temp = document.getElementById('countdown');
-		//temp.innerHTML = "Assembling photos into a gif. Please be patient";
 		assemblegif();
 		$(location).attr('href', './email.html?montagefile=montage.gif');
 	}, 10000);

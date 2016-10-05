@@ -4,42 +4,10 @@
   margin: auto;
   text-align: center;
   padding-top: 30vh;
-  background-color: #343434;
   border-radius: 2%;
-}
-
-.yesEmailbutton {
-	background-color: #04B404;
-	color: white;
-	width: 100%;
-	padding: 5% 0 5% 0;
-	margin: 5% auto 5% auto;
-	text-align: center;
-	font-size: 2.5em;
-	border-radius: 10px;
-}
-
-.noEmailbutton {
-	background-color: #B40404;
-	color: white;
-	width: 100%;
-	padding: 5% 0 5% 0;
-	margin: 5% auto 5% auto;
-	text-align: center;
-	font-size: 2.5em;
-	border-radius: 10px;
-}
-
-h1 {
-  font-size: 4em;
-  color: white;
 }
 
 p {
   font-size: 2em;
-  color: #BBBBBB;
 }
 
-body {
-  background-color: #232323;
-}
