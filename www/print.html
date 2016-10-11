@@ -5,6 +5,7 @@
     <link type="text/css" rel="stylesheet" href="print.css" />
 	<link type="text/css" rel="stylesheet" href="global.css" />
     <script src="jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="cookies.js"></script>
   </head>
 
   <body>
@@ -15,53 +16,22 @@
 		  </td>
 		</tr>
 	  </table>
-	  <table align="center">
-		<tr id="emailtr">
-		  <td>
-		    <p><strong>Email/Text photo?</strong></p>
-		  </td>
-		  <td id='buttontd'>
-			<div class="yesEmailbutton">
-			  <strong>YES</strong>
-			</div>
-			<div class="noEmailbutton">
-			  <strong>NO</strong>
-			</div>
-		  </td>
-		</tr>
-	  </table>
     </div>
   </body>
   <script>
-    function assemblePhotos()
-    {
-      var url="assembleLabel.php?photofilename=montage.jpg";
-		  $.get(url); //assemble photo
-    }
-
     function printPhoto()
     {
-      var url="printphoto.php?photofilename=montage.jpg";
-		  $.get(url); //print photo
+		if(readCookie("print") == "y")
+		{
+			console.log(document.cookie);
+			var url="printphoto.php?photofilename=montage.jpg";
+			$.get(url); //print photo
+		}
     }
 
     $(document).ready(function() {
-	  var timeoutTime = 10000;
-	  timeoutHandler = window.setTimeout(function() {
-        document.getElementById('emailtr').style.visibility = "visible";
-		document.getElementById('messagetd').innerHTML= "<p><h1>PRINTING IMAGE</h1> <p>Please give it some time to finish printing.</p><p>"
-      }, timeoutTime);
-	  $('.yesEmailbutton').click(function() {
-		$(location).attr('href', './email.html');
-	  });
-	  $('.noEmailbutton').click(function() {
-		$(location).attr('href', './info.html');
-	  });
-	  document.getElementById('emailtr').style.visibility = "hidden";
-	  document.getElementById('messagetd').innerHTML= "<p><h1>ASSEMBLING IMAGE</h1><p>"
-	  //assemblePhotos();
       printPhoto();
-	  $(location).attr('href', './email.html?montagefile=montage.jpg');
+	  $(location).attr('href', './email.html');
     });
 </script>
 </html>

@@ -1,1 +1,2 @@
 gphoto2 --capture-image-and-download -F 8 -I 1
+sleep 1

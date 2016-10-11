@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Take Photos</title>
-    <link type="text/css" rel="stylesheet" href="takephotos.css" />
-    <script src="jquery-1.11.3.js"></script>
-  </head>
-  <body>
-    <div class="liveview">
-      
-    </div>
+	<head>
+		<title>Photo Showcase</title>
+		<link type="text/css" rel="stylesheet" href="takephotos.css" />
+		<link type="text/css" rel="stylesheet" href="global.css" />
+		<script src="jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="takephotos.js"></script>
+		<script type="text/javascript" src="cookies.js"></script>
+	</head>
 
-    <a href="./showphotos.html">
-    <div class="seephotos">
-      <p>SHOW PHOTOS</p>
-    </div>
-    </a>
-  </body>
-<script>
-function takeFourPhotos(){
-	var url="takedslrphoto.php?photofilename=image";
-	//var url="takepicamphoto.php?photofilename=image";
-	for(i = 0; i <4; i++)
-	{
-		//display a count-down timer of some sort
-		$.get(url.concat(i.toString(), ".jpg")); //take photo
-	}
-	return false;
-}
-
-$(document).ready(function(){
-    takeFourPhotos();
-});
-</script>
+	<body>
+		<table class="photogrid">
+			<tbody>
+				<tr>
+					<td id ='iframeContainer0'><iframe seamless src="image0.php" id="imageframe0"></iframe></td>
+					<td id ='iframeContainer1'><iframe seamless src="image1.php" id="imageframe1"></iframe></td>
+				</tr>
+				<tr>
+					<td id ='iframeContainer2'><iframe seamless src="image2.php" id="imageframe2"></iframe></td>
+					<td id ='iframeContainer3'><iframe seamless src="image3.php" id="imageframe3"></iframe></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="buttongrid">
+			<tbody>
+				<tr class="instrRow" id='instructiontr'>
+					<td class="instrCol" id='instructiontd'>
+						<p><strong>RETAKING</strong>: Click on the desired picture to be retaken.</p>
+						<p><strong>PRINT</strong>: Click on the Print button.</p>
+					</td>
+					<td id='buttontd'>
+						<div class="printbutton">
+							PRINT
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
 </html>

@@ -1,0 +1,13 @@
+.printdiag {
+  width: 97vw;
+  height: 67vh;
+  margin: auto;
+  text-align: center;
+  padding-top: 30vh;
+  border-radius: 2%;
+}
+
+p {
+  font-size: 2em;
+}
+

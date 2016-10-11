@@ -1,39 +1,45 @@
-.liveview {
-  width: 80vw;
-  height: 75vh;
-  margin: 2% auto 2% auto;
-  background-color: #adcbe3;
-  box-shadow: 10px 10px 5px;
+.photogrid {
+	margin: auto;
 }
 
-li {
-  font-size: 1.5em;
+.buttongrid {
+	margin: auto;
 }
 
-.seephotos {
-  width: 100vw;
-  height: 10vh;
-  background-color: #121212;
-  color: white;
-  text-align: center;
-  font-size: 3em;
-  font-family: sans-serif;
-  margin-left: -8px;
+td {
+	padding: 0px;
 }
 
-a {
-  text-decoration: none;
-  color: white;
+img {
+	width: 40vw;
+	height: 35vh;
+	margin: -2px -1px -6px -2px;
 }
 
-a:link {
-  text-decoration: none;
+.instrRow {
+	background-color: #4b86b4;
 }
 
-a:visited {
-  text-decoration: none;
+.instrCol {
+	color: #d4d8d4;
+	font-size: 1.35em;
+	text-align: center;
 }
 
-body {
-  background-color: #2a4d69;
+.printbutton {
+	background-color: #03396c;
+	color: white;
+	width: 100%;
+	padding: 5% 0 5% 0;
+	margin: 5% auto 5% auto;
+	text-align: center;
+	font-size: 2.5em;
+	border-radius: 10px;
+}
+
+iframe{
+   width: 320px;
+   height: 220px;
+   overflow: hidden;
+   pointer-events:none;
 }

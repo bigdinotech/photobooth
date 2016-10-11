@@ -3,28 +3,33 @@
   <head>
     <title>SETUP</title>
     <link type="text/css" rel="stylesheet" href="setup.css" />
+	<link type="text/css" rel="stylesheet" href="global.css" />
     <script src="jquery-1.11.3.js"></script>
     <script type="text/javascript" src="setup.js"></script>
+	<script type="text/javascript" src="cookies.js"></script>
   </head>
 
   <body>
     <h1 class="header">SETUP PAGE</h1>
-    <div class="buttonwrapper">
-      <div id="picam">
-        <p>Pi Camera</p>
-      </div>
-      <div id="dslrcam">
-        <p>DSLR Camera</p>
-      </div>
-      <div id="manualdslr">
-        <p>Manual DSLR</p>
-      </div>
-      <div class="infobox">
-        Info<br/>
-      </div>
-      <div id="start">
-        START
-      </div>
+    <div class="setuplayout">
+	  <table>
+	    <tr>
+		  <input id = "emailcheckboxid" type="checkbox" name="email" value="send_email" checked> Enable E-Mail feature<br>
+		  <input id = "mmscheckboxid" type="checkbox" name="cell" value="send_mms"> Enable MMS feature<br>
+		  <input id = "printcheckboxid" type="checkbox" name="cell" value="print_photo"> Enable printing feature<br>
+	    </tr>
+	    <tr>
+		  <p>Sender Credentials<br>
+		    Username: <input id="emailcredentialid" type="text" name="user"><br>
+		    Password: <input id="passcredentialid" type="password" name="password">
+		  </p>
+	    </tr>
+	    <tr>
+	      <div id="start">
+            <h2>START</h2>
+		  </div>
+        </tr>
+	  </table>
     </div>
   </body>
 </html>

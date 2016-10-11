@@ -8,39 +8,10 @@
   color: #809999;
 }
 
-.buttonwrapper {
-  width: 80vw;
-  height: 70vh;
-  text-align: center;
-  margin: auto;
-  background-color: #809999;
-  padding: 1% 0 1% 0;
-}
-
-p {
-  padding: 2% 0 2% 0;
-  font-size: 2.5em;
-  font-family: monospace;
-  color: #ff5722;
-}
-
 div div {
   display: inline-block;
   border-radius: 5px;
   margin: 5px auto 5px auto;
-  background-color: #ffeead;
-}
-
-#picam {
-  width: 35vw;
-}
-
-#dslrcam {
-  width: 35vw;
-}
-
-#manualdslr {
-  width: 35vw;
 }
 
 #start {
@@ -51,9 +22,11 @@ div div {
   font-family: monospace;
 }
 
-.infobox {
-  width: 35vw;
-  padding: 2% 0 2% 0;
-  font-family: monospace;
-  font-size: 2em;
+.setuplayout {
+	text-align: center;
+	font-family: sans-serif;
+	margin: auto;
+	float: center;
+	width: auto;
+	height: auto;
 }

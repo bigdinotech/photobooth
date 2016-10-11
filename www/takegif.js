@@ -36,7 +36,8 @@ $(document).ready(function(){
 	countdown();
 	setTimeout(function() {
 		takegifPhotos();
-		assemblegif();
-		$(location).attr('href', './email.html?montagefile=montage.gif');
+		$(location).attr('href', './assemble.html');
+		//assemblegif();
+		//$(location).attr('href', './email.html?montagefile=montage.gif');
 	}, 10000);
 });

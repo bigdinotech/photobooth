@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Print Page</title>
+    <link type="text/css" rel="stylesheet" href="assemble.css" />
+	<link type="text/css" rel="stylesheet" href="global.css" />
+    <script src="jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="cookies.js"></script>
+  </head>
+  
+  <body>
+    <div class="printdiag">
+	  <table class="messagtable" align="center">
+		<tr>
+		  <td id="messagetd">
+		  </td>
+		</tr>
+	  </table>
+    </div>
+  </body>
+  
+  
+  <script>
+  function assemblePhotos()
+  {
+    var url="";
+    var mode = readCookie("mode");
+    switch(mode)
+    {
+	  case "gif":
+		url="assemblegif.php";
+		break;
+	  case "logo":
+		url="assembleLogo.php?photofilename=montage.jpg";
+		break;
+	  case "banner":
+		url="assembleLabel.php?photofilename=montage.jpg";
+		break;
+	  default:
+    }
+	$.get(url); //assemble photo
+  }
+	
+  $(document).ready(function() {
+	var mode = readCookie("mode");
+	document.getElementById('messagetd').innerHTML= "<p><h1>ASSEMBLING IMAGE</h1><p>"
+	assemblePhotos();
+	if(mode=="gif")
+	{
+	  $(location).attr('href', './email.html');
+	}
+	else
+	{
+	  $(location).attr('href', './print.html');
+	}
+  });
+  </script>
+</html>

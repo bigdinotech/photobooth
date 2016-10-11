@@ -6,26 +6,27 @@
 		<link type="text/css" rel="stylesheet" href="global.css" />
 		<script src="jquery-1.11.3.js"></script>
 		<script type="text/javascript" src="CSJSRequestObject.js"></script>
+		<script type="text/javascript" src="cookies.js"></script>
 	</head>
 
 	<body>
 	  <div class="emailform">
 	  <form id="emailformid" name="emailphotoform" method="post" action="sendEmail.php">
 	    <table align="center">
-		  <tr>
+		  <tr id="sendemailtr">
 			<td>
 			  <label for="email"><h2><strong>Email:</strong></h2></label>
 			</td>
 			<td>
-			  <input  type="text" name="email" maxlength="40" size="15">
+			  <input id="emailtextbox" type="text" name="email" maxlength="40" size="15">
 			</td>
 		  </tr>
-		  <tr>
+		  <tr id="sendmmstr">
 		    <td>
 			  <label for="cellnum"><h2><strong>Cell:</strong></h2></label>
 			</td>
 			<td>
-			  <input  type="text" name="cellnum" maxlength="10" size="15">
+			  <input id="mmstextbox" type="text" name="cellnum" maxlength="10" size="15">
 			</td>
 		  </tr>
 		  <tr>
@@ -46,12 +47,43 @@
 	<script>
 
 	$(document).ready(function(){
-		var montagefile = Request.QueryString("montagefile");
-		console.log(montagefile);
-		document.getElementById("montageimage").src=montagefile;
-		var url="sendEmail.php?montagefile=" + montagefile;
+		var mode = readCookie("mode");
+		var url="sendEmail.php";
+		var imagepreview = "";
+		if(mode == "gif")
+		{
+			imagepreview = "montage.gif";
+		}
+		else
+		{
+			imagepreview = "montage.jpg";
+		}
+		document.getElementById("montageimage").src=imagepreview;
 		document.getElementById("emailformid").action=url;
 		console.log(url);
+		console.log(mode);
+		if(readCookie("email") == "y")
+		{
+			console.log("email enabled");
+			document.getElementById("emailtextbox").disabled = false;
+		}
+		else
+		{
+			console.log("email disabled");
+			document.getElementById("emailtextbox").disabled = true;
+			document.getElementById("emailtextbox").value = " feature disabled";
+		}
+		if(readCookie("mms") == "y")
+		{
+			console.log("mms enabled");
+			document.getElementById("mmstextbox").disabled = false;
+		}
+		else
+		{
+			console.log("mms disabled");
+			document.getElementById("mmstextbox").disabled = true;
+			document.getElementById("mmstextbox").value = " feature disabled";
+		}
 	});
 	</script>
 	
