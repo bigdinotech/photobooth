@@ -1,6 +1,6 @@
 <?php
 $filename = $_GET["photofilename"];
-$command = "raspistill -w 848 -h 480 -q 100 -o " . $filename;
+$command = "raspistill -w 900 -h 600 -q 100 -o " . $filename;
 exec($command);
 if(file_exists($filename))
 {

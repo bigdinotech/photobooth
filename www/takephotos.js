@@ -64,7 +64,16 @@ $(document).ready(function() {
 });
 
 function takePhoto(filename){
-	var url="takedslrphoto.php?photofilename=";
+	var url;
+	var camera = readCookie("camera");
+	if(camera == "dslr")
+	{
+		url="takedslrphoto.php?photofilename=";
+	}
+	else
+	{
+		url="takepicamphoto.php?photofilename=";
+	}
 	$.get(url.concat(filename)); //take photo
 }
 

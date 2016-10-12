@@ -10,14 +10,20 @@
   </head>
 
   <body>
-    <h1 class="header">SETUP PAGE</h1>
+    <h1 class="header">PHOTOBOOTH SETUP</h1>
     <div class="setuplayout">
 	  <table>
 	    <tr>
-		  <input id = "emailcheckboxid" type="checkbox" name="email" value="send_email" checked> Enable E-Mail feature<br>
-		  <input id = "mmscheckboxid" type="checkbox" name="cell" value="send_mms"> Enable MMS feature<br>
-		  <input id = "printcheckboxid" type="checkbox" name="cell" value="print_photo"> Enable printing feature<br>
+		  <input id="emailcheckboxid" type="checkbox" name="email" value="send_email" checked> Enable E-Mail feature<br>
+		  <input id="mmscheckboxid" type="checkbox" name="cell" value="send_mms"> Enable MMS feature<br>
+		  <input id="printcheckboxid" type="checkbox" name="cell" value="print_photo"> Enable printing feature<br>
+		  <br>
 	    </tr>
+		</tr>
+		  Camera Select<br>
+		  <input id="dslrcameraselectid" type="radio" name="cameraselect" value="DSLR" checked> DSLR<br>
+		  <input id="picameraselectid" type="radio"name="cameraselect" value="picam"> picam<br>
+		</tr>
 	    <tr>
 		  <p>Sender Credentials<br>
 		    Username: <input id="emailcredentialid" type="text" name="user"><br>

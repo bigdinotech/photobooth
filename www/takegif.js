@@ -18,7 +18,6 @@ function countdown()
 	}
 	
 	seconds--;
-	//var beep = new Audio('beep.mp3');
 	beep.load();
 	beep.play();
 	temp = document.getElementById('countdown');
@@ -37,7 +36,5 @@ $(document).ready(function(){
 	setTimeout(function() {
 		takegifPhotos();
 		$(location).attr('href', './assemble.html');
-		//assemblegif();
-		//$(location).attr('href', './email.html?montagefile=montage.gif');
 	}, 10000);
 });
