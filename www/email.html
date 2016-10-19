@@ -31,7 +31,7 @@
 		  </tr>
 		  <tr>
 		    <td colspan="2" align="center">
-			  <input type="submit" value="Submit">
+			  <input id="submitinfo" type="submit" value="Submit" onClick="this.visibility=hidden">
 			</td>
 		  </tr>
 		  <tr>
@@ -48,7 +48,6 @@
 
 	$(document).ready(function(){
 		var mode = readCookie("mode");
-		var url="sendEmail.php";
 		var imagepreview = "";
 		if(mode == "gif")
 		{
@@ -59,8 +58,6 @@
 			imagepreview = "montage.jpg";
 		}
 		document.getElementById("montageimage").src=imagepreview;
-		document.getElementById("emailformid").action=url;
-		console.log(url);
 		console.log(mode);
 		if(readCookie("email") == "y")
 		{
@@ -84,6 +81,13 @@
 			document.getElementById("mmstextbox").disabled = true;
 			document.getElementById("mmstextbox").value = " feature disabled";
 		}
+	});
+	
+	$(document).ready(function () {
+		$("#emailformid").submit(function () {
+			document.getElementById("submitinfo").disabled = true;
+			return true;
+		});
 	});
 	</script>
 	

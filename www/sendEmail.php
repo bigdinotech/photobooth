@@ -30,6 +30,11 @@ $ext = pathinfo($origfilename, PATHINFO_EXTENSION);
 $filename = "montage" .  intval($countvalue) . "." .$ext;
 copy($origfilename, $filename);
 
+//write filename, email, and cellnum to a file
+$logfile = fopen("emaillog.xls", "a") or die("Unable to open file!");
+fwrite($logfile, ($filename . ", " . $to . ", " . $_POST['cellnum'] . "\r\n"));
+fclose($logfile);
+
 //send Email with attached photo
 $headers = array ('From' => $from,
       'To' => $to,
