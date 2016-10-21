@@ -41,6 +41,14 @@ $(document).ready(function() {
 		createCookie("credentialusername", document.getElementById("emailcredentialid").value);
 		createCookie("credentialpass", document.getElementById("passcredentialid").value);
 	}
+	if(document.getElementById("autotakeid").checked)
+	{
+		createCookie("autotake",'auto');
+	}
+	else
+	{
+		createCookie("autotake",'manual');
+	}
 	if(document.getElementById("dslrcameraselectid").checked)
 	{
 		createCookie("camera",'dslr');

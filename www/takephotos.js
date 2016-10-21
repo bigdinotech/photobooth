@@ -1,5 +1,6 @@
 var timeoutHandler;
 var mode;
+var imageTaken = [false, false, false, false];
 
 
 $(document).ready(function() {
@@ -9,7 +10,7 @@ $(document).ready(function() {
     $(location).attr('href', './assemble.html');
   }, timeoutTime);
 
-  $('.printbutton').click(function() {
+  $('.assemblebutton').click(function() {
     $(location).attr('href', './assemble.html');
   });
   
@@ -19,8 +20,8 @@ $(document).ready(function() {
 	timeoutHandler = window.setTimeout(30000);
 
 	document.getElementById('imageframe0').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() { 
-	  //your_func();
+	setTimeout(function() {
+	  imageTaken[0] = true;
 	  takePhoto(filename);
 	  document.getElementById('imageframe0').contentWindow.document.location.href="image0.php";
 	}, 5000);
@@ -32,7 +33,7 @@ $(document).ready(function() {
 	timeoutHandler = window.setTimeout(30000);
 	document.getElementById('imageframe1').contentWindow.document.location.href="countdown.html";
 	setTimeout(function() { 
-	  //your_func();
+	  imageTaken[1] = true;
 	  takePhoto(filename);
 	  document.getElementById('imageframe1').contentWindow.document.location.href="image1.php";
 	}, 5000);
@@ -43,8 +44,8 @@ $(document).ready(function() {
 	window.clearTimeout(timeoutHandler);
 	timeoutHandler = window.setTimeout(30000);
 	document.getElementById('imageframe2').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() { 
-	  //your_func();
+	setTimeout(function() {
+      imageTaken[2] = true;		
 	  takePhoto(filename);
 	  document.getElementById('imageframe2').contentWindow.document.location.href="image2.php";
 	}, 5000);
@@ -55,7 +56,8 @@ $(document).ready(function() {
 	window.clearTimeout(timeoutHandler);
 	timeoutHandler = window.setTimeout(30000);
 	document.getElementById('imageframe3').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() { 
+	setTimeout(function() {
+      imageTaken[3] = true;	
 	  takePhoto(filename);
 	  document.getElementById('imageframe3').contentWindow.document.location.href="image3.php";
 	}, 5000);
@@ -75,6 +77,24 @@ function takePhoto(filename){
 		url="takepicamphoto.php?photofilename=";
 	}
 	$.get(url.concat(filename)); //take photo
+	
+	if(readCookie("autotake") == "manual")
+	{
+		if(mode == "logo")
+		{
+			if(imageTaken[0] && imageTaken[1] && imageTaken[2])
+			{
+				document.getElementById('buttontd').style.visibility = "visible";
+			}
+		}
+		else
+		{
+			if(imageTaken[0] && imageTaken[1] && imageTaken[2] && imageTaken[3])
+			{
+				document.getElementById('buttontd').style.visibility = "visible";
+			}
+		}
+	}
 }
 
 function takePhotos(){
@@ -142,7 +162,7 @@ function initializePhotoGrid() {
 		document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
 	}
 	document.getElementById('buttontd').style.visibility = "hidden";
-	document.getElementById('instructiontd').innerHTML= "<p>Please look at the DSLR camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
+
 	disableRetake();
 }
 
@@ -181,6 +201,15 @@ $(document).ready(function(){
 	initializePhotoGrid();
 	console.log(document.cookie);
 	setTimeout(function() {
-		takePhotos();
+		if(readCookie("autotake") == "auto")
+		{
+			document.getElementById('instructiontd').innerHTML= "<p>Please look at the external camera not the one on the tablet</p><p>4 Photos will automatically be taken</p>";
+			takePhotos();
+		}
+		else
+		{
+			document.getElementById('instructiontd').innerHTML= "<p>Click a frame to take a picture</p>";
+			enableRetake();
+		}
 	}, 1000); 
 });
