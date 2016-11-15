@@ -49,6 +49,18 @@ $(document).ready(function() {
 	{
 		createCookie("autotake",'manual');
 	}
+	if(document.getElementById("enablegifid").checked)
+	{
+		createCookie("enablegif",'y');
+	}
+	else
+	{
+		createCookie("enablegif",'n');
+	}
+	if(document.getElementById("simplemodeid").checked)
+	{
+		createCookie("mode",'simple');
+	}
 	if(document.getElementById("dslrcameraselectid").checked)
 	{
 		createCookie("camera",'dslr');

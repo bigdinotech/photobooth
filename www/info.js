@@ -1,6 +1,17 @@
 
 $(document).ready(function() {
 	
+  var mode = readCookie("mode");
+  if(mode == "simple")
+  {
+	$(location).attr('href', './takephotos.html');
+  }
+  var gif = readCookie("enablegif");
+  if(gif == "n")
+  {
+	document.getElementById('giflayout').style.visibility = "hidden";
+  }
+	
   $('.banner4').click(function() 
   {
 	document.cookie = 'mode = banner';

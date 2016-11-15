@@ -1,0 +1,5 @@
+#!/bin/bash
+rm $filename
+mogrify -resize 900x600 image*.jpg
+montage image*.jpg -tile 2x2 -geometry +5+5 $filename
+rm image*.jpg
