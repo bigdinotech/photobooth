@@ -4,12 +4,21 @@ require("Mail/mime.php");
 
 $from = "xxx@gmail.com";
 $to = $_POST['email'];
-$message = "*****";
-$subject = "*****";
+$message = "Thank you for coming";
+$subject = "Photobooth photos";
 
 $host = "smtp.gmail.com";
 $username = $_COOKIE["credentialusername"];
 $password = $_COOKIE["credentialpass"];
+
+//read subject and message from file
+$subject_file = fopen("config/subject_text", "r") or die("Unable to open file!");
+$subject = fread($subject_file, filesize("config/subject_text"));
+fclose($subject_file);
+
+$message_file = fopen("config/message_text", "r") or die("Unable to open file!");
+$message = fread($message_file, filesize("config/message_text"));
+fclose($message_file);
 
 //read counter value and increment by 1
 $countvalue = intval(file_get_contents('counter'));
