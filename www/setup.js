@@ -10,6 +10,18 @@ $(document).ready(function() {
 	{
 		document.getElementById("passcredentialid").value = pass;
 	}
+
+  $('#emailcredentialid').keyboard({
+		layout: 'qwerty',
+		autoAccept : true
+	})
+	.addTyping();
+	
+  $('#passcredentialid').keyboard({
+		layout : 'qwerty',
+		autoAccept : true
+	})
+	.addTyping();
 	
   $('#start').click(function() {
 	if(document.getElementById("emailcheckboxid").checked)
