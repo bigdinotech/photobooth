@@ -73,6 +73,10 @@ $(document).ready(function() {
 	{
 		createCookie("mode",'simple');
 	}
+	else
+	{
+		createCookie("mode",'default');
+	}
 	if(document.getElementById("dslrcameraselectid").checked)
 	{
 		createCookie("camera",'dslr');
