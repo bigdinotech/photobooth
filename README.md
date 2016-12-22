@@ -40,6 +40,8 @@
 
 
 ###6) install required php libraries
+`sudo apt-get install php-pear`
+
 `pear install Mail-1.3.0`
 
 `pear install Mail_Mime`
