@@ -77,6 +77,14 @@ $(document).ready(function() {
 	{
 		createCookie("mode",'default');
 	}
+	if(document.getElementById("multiplelogosid").checked)
+	{
+		createCookie("multilogo",'y');
+	}
+	else
+	{
+		createCookie("multilogo",'n');
+	}
 	if(document.getElementById("dslrcameraselectid").checked)
 	{
 		createCookie("camera",'dslr');

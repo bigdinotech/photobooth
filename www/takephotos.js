@@ -14,6 +14,10 @@ $(document).ready(function() {
     $(location).attr('href', './assemble.html');
   });
   
+  $('.customizebutton').click(function() {
+    $(location).attr('href', './logoBrowser.php');
+  });
+  
   $('#iframeContainer0').click(function() {
     var filename = 'image0.jpg'
 	window.clearTimeout(timeoutHandler);
@@ -85,6 +89,10 @@ function takePhoto(filename){
 			if(imageTaken[0] && imageTaken[1] && imageTaken[2])
 			{
 				document.getElementById('buttontd').style.visibility = "visible";
+				if(readCookie("multilogo") == "y")
+				{
+					document.getElementById('customizebutton').style.visibility = "visible";
+				}
 			}
 		}
 		else
@@ -130,6 +138,7 @@ function takePhotos(){
 			setTimeout(function() {
 			  document.getElementById('instructiontd').innerHTML= "<p><strong>RETAKING</strong>: Click on the desired picture to be retaken.</p><p><strong>PRINT</strong>: Click on the Print button.</p>";
 		      document.getElementById('buttontd').style.visibility = "visible";
+			  document.getElementById('customizebutton').style.visibility = "visible";
 	        }, 12000);
 			enableRetake();
 		  }
@@ -162,6 +171,7 @@ function initializePhotoGrid() {
 		document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
 	}
 	document.getElementById('buttontd').style.visibility = "hidden";
+	document.getElementById('customizebutton').style.visibility = "hidden";
 
 	disableRetake();
 }
