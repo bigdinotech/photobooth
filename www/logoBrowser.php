@@ -13,8 +13,7 @@ $selectedImage = (isset($_POST['selectedImage'])) ? trim($_POST['selectedImage']
 <meta name="robots" content="noindex,nofollow" />
 </head>
 <body>
-<strong>Logo Browser</strong>
-<br />
+<strong>Please choose a logo</strong>
 <table>
 <tr>
 	<td>
@@ -55,30 +54,43 @@ $selectedImage = (isset($_POST['selectedImage'])) ? trim($_POST['selectedImage']
 	</td>
 	</tr>
 </table>
-<br />
-<br />
-<table class="photogrid">
-			<tbody>
-				<tr>
-					<td id ='iframeContainer0'><img src="image0.jpg" style= "width: 100%" /></td>
-					<td id ='iframeContainer1'><img src="image1.jpg" style= "width: 100%" /></td>
-				</tr>
-				<tr>
-					<td id ='iframeContainer2'><img src="image2.jpg" style= "width: 100%" /></td>
-					<td id ='iframeContainer3'>
-					<?php
-						if(!empty($selectedImage))
-						{
-							$selectedImage = "./images/logos/" . $selectedImage;
-						  ?>
-						  <img src="<?php echo $selectedImage ?>" alt="" style= "width: 100%"/>
-						  <?php
-						}
-						?>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+<table class="photogrid" width = "600px" table-layout = "fixed">
+	<tbody>
+		<tr>
+			<td id ='iframeContainer0'><img src="image0.jpg"/></td>
+			<td id ='iframeContainer1'><img src="image1.jpg"/></td>
+		</tr>
+		<tr>
+			<td id ='iframeContainer2'><img src="image2.jpg"/></td>
+			<td id ='iframeContainer3'>
+			<?php
+				if(!empty($selectedImage))
+				{
+					$selectedImage = "./images/logos/" . $selectedImage;
+				  ?>
+				  <img src="<?php echo $selectedImage ?>"/>
+				  <?php
+					echo "
+					<script>
+						document.getElementById('buttontd').style.visibility = 'visible';
+						console.log('visible');
+					</script>
+					";
+				}
+				else
+				{
+					echo "
+					<script>
+						document.getElementById('buttontd').style.visibility = 'hidden';
+						console.log('hidden');
+					</script>
+					";
+				}
+				?>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 </body>
 <?php
