@@ -10,19 +10,22 @@ $(document).ready(function() {
 	{
 		document.getElementById("passcredentialid").value = pass;
 	}
-
-  $('#emailcredentialid').keyboard({
-		layout: 'qwerty',
-		autoAccept : true
-	})
-	.addTyping();
 	
-  $('#passcredentialid').keyboard({
-		layout : 'qwerty',
-		autoAccept : true
-	})
-	.addTyping();
-	
+	if(!(readCookie("onscreenkeyboard")=='n'))
+	{
+	  $('#emailcredentialid').keyboard({
+			layout: 'qwerty',
+			autoAccept : true
+		})
+		.addTyping();
+		
+	  $('#passcredentialid').keyboard({
+			layout : 'qwerty',
+			autoAccept : true
+		})
+		.addTyping();
+		console.log("enabling onscreenkeyboard");
+	}
   $('#start').click(function() {
 	if(document.getElementById("emailcheckboxid").checked)
 	{
@@ -60,6 +63,14 @@ $(document).ready(function() {
 	else
 	{
 		createCookie("autotake",'manual');
+	}
+	if(document.getElementById("onscreenkeyboardid").checked)
+	{
+		createCookie("onscreenkeyboard",'y');
+	}
+	else
+	{
+		createCookie("onscreenkeyboard",'n');
 	}
 	if(document.getElementById("enablegifid").checked)
 	{
