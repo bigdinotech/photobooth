@@ -1,5 +1,5 @@
 for i in $(ls capt*.jpg);do
-	mogrify -resize 600x400 $i
-	convert $i -bordercolor white -border 56x0 $i
-	convert $i ./images/label_small.JPG -append $i
+	mogrify -resize 1200x800 $i
+	convert $i -bordercolor white -border 40x0 $i
+	convert $i ./images/label.jpg -append $i
 done
