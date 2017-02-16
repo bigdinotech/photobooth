@@ -6,6 +6,10 @@ $(document).ready(function() {
   {
 	$(location).attr('href', './takephotos.html');
   }
+  else if(mode == "logo")
+  {
+	$(location).attr('href', './takephotos.html');
+  }
   var gif = readCookie("enablegif");
   if(gif == "n")
   {

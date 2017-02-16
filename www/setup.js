@@ -80,13 +80,17 @@ $(document).ready(function() {
 	{
 		createCookie("enablegif",'n');
 	}
+	if(document.getElementById("defaultmodeid").checked)
+	{
+		createCookie("mode",'default');
+	}
 	if(document.getElementById("simplemodeid").checked)
 	{
 		createCookie("mode",'simple');
 	}
-	else
+	if(document.getElementById("simplelogoid").checked)
 	{
-		createCookie("mode",'default');
+		createCookie("mode",'logo');
 	}
 	if(document.getElementById("multiplelogosid").checked)
 	{
