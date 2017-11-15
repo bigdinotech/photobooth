@@ -72,6 +72,7 @@ $(document).ready(function() {
 	{
 		createCookie("onscreenkeyboard",'n');
 	}
+	/**
 	if(document.getElementById("enablegifid").checked)
 	{
 		createCookie("enablegif",'y');
@@ -100,6 +101,7 @@ $(document).ready(function() {
 	{
 		createCookie("multilogo",'n');
 	}
+	**/
 	if(document.getElementById("dslrcameraselectid").checked)
 	{
 		createCookie("camera",'dslr');
@@ -108,8 +110,10 @@ $(document).ready(function() {
 	{
 		createCookie("camera",'picam');
 	}
+	createCookie("mode",'logo');
 	console.log(document.cookie);
-    $(location).attr('href', './info.html');
+    //$(location).attr('href', './info.html');
+	$(location).attr('href', './takephotos.html');
   });
 });
 
