@@ -4,10 +4,10 @@ var imageTaken = [false, false, false, false];
 
 
 $(document).ready(function() {
-  var timeoutTime = 3000000;
+  var timeoutTime = 300000;
   mode = readCookie("mode");
   timeoutHandler = window.setTimeout(function() {
-    $(location).attr('href', './assemble.html');
+    $(location).attr('href', './takephotos.html');
   }, timeoutTime);
 
   $('.assemblebutton').click(function() {

@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var username = 	readCookie("credentialusername");
 	var pass = readCookie("credentialpass");
 	console.log(document.cookie);
+	/**
 	if(username != null)
 	{
 		document.getElementById("emailcredentialid").value = username;
@@ -10,7 +11,7 @@ $(document).ready(function() {
 	{
 		document.getElementById("passcredentialid").value = pass;
 	}
-	
+	**/
 	if(!(readCookie("onscreenkeyboard")=='n'))
 	{
 	  $('#emailcredentialid').keyboard({
@@ -51,11 +52,13 @@ $(document).ready(function() {
 	{
 		createCookie("print",'n');
 	}
+	/**
 	if(readCookie("email") == "y")
 	{
 		createCookie("credentialusername", document.getElementById("emailcredentialid").value);
 		createCookie("credentialpass", document.getElementById("passcredentialid").value);
 	}
+	**/
 	if(document.getElementById("autotakeid").checked)
 	{
 		createCookie("autotake",'auto');

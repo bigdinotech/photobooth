@@ -15,6 +15,10 @@ $message_file = fopen("config/message_text", "r") or die("Unable to open file!")
 $message = fread($message_file, filesize("config/message_text"));
 fclose($message_file);
 
+$event_file = fopen("config/eventname", "r") or die("Unable to open file!");
+$eventname = fread($event_file, filesize("config/eventname"));
+fclose($event_file);
+
 //read counter value and increment by 1
 $countvalue = intval(file_get_contents('counter'));
 $newcountvalue = intval($countvalue) + 1;
@@ -31,7 +35,7 @@ else
 	$origfilename = "montage.jpg";
 }
 $ext = pathinfo($origfilename, PATHINFO_EXTENSION);
-$filename = "montage" .  intval($countvalue) . "." .$ext;
+$filename = $eventname .  intval($countvalue) . "." .$ext;
 copy($origfilename, $filename);
 
 //write filename, email, and cellnum to a file
