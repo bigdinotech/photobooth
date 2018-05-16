@@ -51,7 +51,7 @@
 
 
 ### 7) Printer setup (Optional)
-Follow the instructions found here: http://www.instructables.com/id/Raspberry-Pi-photo-booth-controller/step3/Connect-the-Printer/
+#### Follow the instructions found here: http://www.instructables.com/id/Raspberry-Pi-photo-booth-controller/step3/Connect-the-Printer/
 
 
 
@@ -76,3 +76,6 @@ Generate access token and copy it to your clipboard
 `./dropbox_uploader.sh`
 
 paste the generate access token
+
+### 8) Setup email using ssmpt and mpack
+#### Follow instructions found here: http://ozzmaker.com/send-email-from-the-raspberry-pi-or-linux-command-line-with-attachments/
