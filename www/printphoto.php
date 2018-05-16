@@ -1,7 +1,4 @@
 <?php
-$command = "cupsenable Canon_CP900";
-exec($command);
-//$filename = $_GET["photofilename"];
 if($_COOKIE["mode"] == "gif")
 {
 	$filename = "montage.gif";
@@ -10,7 +7,13 @@ else
 {
 	$filename = "montage.jpg";
 }
-$command = "lp -d Canon_CP900 " . $filename;
+
+$printer_file = fopen("config/printername", "r") or die("Unable to open file!");
+$printername = fread($printer_file, filesize("config/printername"));
+$printername = preg_replace('/[[:cntrl:]]/', '', $printername);
+fclose($printer_file);
+
+$command = "lp -d " . $printername . " " . $filename;
 exec($command);
 //cleanup
 $command = "rm image*.jpg";

@@ -1,6 +1,8 @@
 <?php
 $filename = $_GET["photofilename"];
+$command = "rm " . $filename; //some cleanup
 $command = "gphoto2 --capture-image-and-download --force-overwrite --filename " . $filename;
+$thumbFilename = "thumb" . $filename;
 exec($command);
 if(file_exists($filename))
 {
@@ -8,7 +10,6 @@ if(file_exists($filename))
   $command = "mogrify -resize 900x600 " . $filename;
   exec($command);
   //create thumbnail
-  $thumbFilename = "thumb" . $filename;
   $command = "cp " . $filename . " " . $thumbFilename;
   exec($command);
   $command = "mogrify -resize 300x200 " . $thumbFilename;

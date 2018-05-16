@@ -17,6 +17,7 @@ fclose($message_file);
 
 $event_file = fopen("config/eventname", "r") or die("Unable to open file!");
 $eventname = fread($event_file, filesize("config/eventname"));
+$eventname = preg_replace('/[[:cntrl:]]/', '', $eventname);
 fclose($event_file);
 
 //read counter value and increment by 1
@@ -39,8 +40,8 @@ $filename = $eventname .  intval($countvalue) . "." .$ext;
 copy($origfilename, $filename);
 
 //write filename, email, and cellnum to a file
-$logfile = fopen("emaillog.xls", "a") or die("Unable to open file!");
-fwrite($logfile, ($filename . ", " . $to . ", " . $_POST['cellnum'] . "\r\n"));
+$logfile = fopen($eventname . "_log.xls", "a") or die("Unable to open file!");
+fwrite($logfile, ($filename . ", " . $_POST['email'] . ", " . $_POST['cellnum'] . "\r\n"));
 fclose($logfile);
 
 //send email via script
@@ -69,11 +70,15 @@ if($_COOKIE["mms"] == "y")
 }
 
 //upload to dropbox
-$command = "./scripts/dropbox_uploader.sh upload " . $filename . " " . $filename;
+$command = "./scripts/dropbox_uploader.sh upload " . $filename . " " . $eventname . "/" . $filename;
 exec($command);
 
 //copy montage into montage dir
 $command =  "mv " . $filename . " ./montages/" . $filename;
+exec($command);
+
+//cleanup
+$command = "rm -rf *.jpg";
 exec($command);
 
 header('Location: info.html');
