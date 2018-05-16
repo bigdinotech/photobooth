@@ -77,5 +77,8 @@ Generate access token and copy it to your clipboard
 
 paste the generate access token
 
-### 9) Setup email using ssmpt and mpack
+#### copy dropbox_uploader.sh into the scripts directory
+`cp dropbox_uploader.sh ~/photobooth/www/scripts/dropbox_uploader.sh`
+
+### 9) Setup email using ssmtp and mpack
 #### Follow instructions found here: http://ozzmaker.com/send-email-from-the-raspberry-pi-or-linux-command-line-with-attachments/
