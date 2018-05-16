@@ -77,5 +77,5 @@ Generate access token and copy it to your clipboard
 
 paste the generate access token
 
-### 8) Setup email using ssmpt and mpack
+### 9) Setup email using ssmpt and mpack
 #### Follow instructions found here: http://ozzmaker.com/send-email-from-the-raspberry-pi-or-linux-command-line-with-attachments/
