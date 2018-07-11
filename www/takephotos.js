@@ -7,7 +7,7 @@ $(document).ready(function() {
   var timeoutTime = 300000;
   mode = readCookie("mode");
   timeoutHandler = window.setTimeout(function() {
-    $(location).attr('href', './takephotos.html');
+    //$(location).attr('href', './takephotos.html');
   }, timeoutTime);
 
   $('.assemblebutton').click(function() {
@@ -207,7 +207,7 @@ function cleanup()
 }
 
 $(document).ready(function(){
-	cleanup();
+	//cleanup();
 	initializePhotoGrid();
 	console.log(document.cookie);
 	setTimeout(function() {

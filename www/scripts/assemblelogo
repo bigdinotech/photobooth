@@ -1,6 +1,2 @@
 rm $filename
-mogrify -resize 900x600 image0.jpg
-mogrify -resize 900x600 image1.jpg
-mogrify -resize 900x600 image2.jpg
 montage image0.jpg image1.jpg image2.jpg $logoname -tile 2x2 -geometry +5+5 $filename
-rm image*.jpg

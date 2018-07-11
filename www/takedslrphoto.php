@@ -1,8 +1,20 @@
 <?php
 $filename = $_GET["photofilename"];
-$command = "rm " . $filename; //some cleanup
-$command = "gphoto2 --capture-image-and-download --force-overwrite --filename " . $filename;
 $thumbFilename = "thumb" . $filename;
+//some cleanup
+if(file_exists($filename))
+{
+	$command = "rm " . $filename; //some cleanup
+	exec($command);
+	sleep(1);
+}
+if(file_exists($thumbFilename))
+{
+	$command = "rm " . "thumb" . $filename;
+	exec($command);
+}
+$command = "gphoto2 --capture-image-and-download --force-overwrite --filename " . $filename;
+
 exec($command);
 if(file_exists($filename))
 {
