@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SETUP</title>
+    <link type="text/css" rel="stylesheet" href="setup.css" />
+	<link type="text/css" rel="stylesheet" href="global.css" />
+    <script src="jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+	<script type="text/javascript" src="cookies.js"></script>
+	
+	<link href="docs/css/jquery-ui.min.css" rel="stylesheet">
+	<!-- still using jQuery v2.2.4 because Bootstrap doesn't support v3+ -->
+	<script src="docs/js/jquery-latest.min.js"></script>
+	<script src="docs/js/jquery-ui.min.js"></script>
+
+	<link href="css/keyboard.css" rel="stylesheet">
+	<script src="keyboardjs/jquery.keyboard.js"></script>
+	
+	<script src="keyboardjs/jquery.mousewheel.js"></script>
+	<script src="keyboardjs/jquery.keyboard.extension-typing.js"></script>
+	<script src="keyboardjs/jquery.keyboard.extension-autocomplete.js"></script>
+	<script src="keyboardjs/jquery.keyboard.extension-caret.js"></script>
+  </head>
+
+  <body>
+  <form id = "configformid" name = "configform" method="post" action="config.php" enctype="multipart/form-data">
+    <h1 class="header">PHOTOBOOTH CONFIG</h1>
+    <div class="setuplayout">
+	  <table>
+	    <tr>
+		  <p>
+		    Event Name: <input id="eventnameid" type="text" name="eventname"><br>
+		    Event Message: <input id="eventmessageid" type="text" name="eventmessage">
+		  </p>
+	    </tr>
+		<tr>
+			<input type="file" name="logofile" id="logofile">
+		</tr>
+
+	    <tr>
+	      <div id="submit">
+			<input id="submitconfig" type="submit" value="Config" onClick="this.visibility=hidden">
+		  </div>
+        </tr>
+	  </table>
+    </div>
+	</form>
+  </body>
+</html>
