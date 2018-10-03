@@ -1,6 +1,7 @@
 <?php
 $target_dir = "images/";
 $target_file = $target_dir . "logo.jpg";
+$minilogo = $target_dir . "minilogo.jpg";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -30,6 +31,13 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
+//copy and resize logo
+$command = "cp " . $target_file . " " . $minilogo;
+exec($command);
+$command = "mogrify -resize 300x200 " . $minilogo;
+exec($command);
+
 $eventname = $_POST['eventname'];
 $eventmessage = $_POST['eventmessage'];
 
