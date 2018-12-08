@@ -1,9 +1,9 @@
 <?php
 $target_dir = "images/";
-$target_file = $target_dir . "logo.jpg";
+$target_file = $target_dir . "logo";
 $minilogo = $target_dir . "minilogo.jpg";
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["logofile"]["tmp_name"]);
@@ -15,11 +15,15 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
+$imageFileType = strtolower(pathinfo(basename($_FILES["logofile"]["name"]),PATHINFO_EXTENSION));
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+if($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png" && $imageFileType != "gif") {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
 }
+
+$target_file = $target_file . "." . $imageFileType;
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";

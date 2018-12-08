@@ -81,6 +81,6 @@ exec($command);
 $command = "rm -rf *.jpg";
 exec($command);
 
-header('Location: info.html');
+header('Location: takephotos.html');
 exit;
 ?>

@@ -2,16 +2,6 @@ $(document).ready(function() {
 	var username = 	readCookie("credentialusername");
 	var pass = readCookie("credentialpass");
 	console.log(document.cookie);
-	/**
-	if(username != null)
-	{
-		document.getElementById("emailcredentialid").value = username;
-	}
-	if(pass !=null)
-	{
-		document.getElementById("passcredentialid").value = pass;
-	}
-	**/
 	if(!(readCookie("onscreenkeyboard")=='n'))
 	{
 	  $('#emailcredentialid').keyboard({
@@ -52,13 +42,6 @@ $(document).ready(function() {
 	{
 		createCookie("print",'n');
 	}
-	/**
-	if(readCookie("email") == "y")
-	{
-		createCookie("credentialusername", document.getElementById("emailcredentialid").value);
-		createCookie("credentialpass", document.getElementById("passcredentialid").value);
-	}
-	**/
 	if(document.getElementById("autotakeid").checked)
 	{
 		createCookie("autotake",'auto');
@@ -113,10 +96,21 @@ $(document).ready(function() {
 	{
 		createCookie("camera",'picam');
 	}
-	createCookie("mode",'logo');
-	console.log(document.cookie);
-    //$(location).attr('href', './info.html');
-	$(location).attr('href', './takephotos.html');
+	if(document.getElementById("defaultmodeid").checked)
+	{
+		createCookie("mode",'logo');
+		$(location).attr('href', './takephotos.html');
+	}
+	else if(document.getElementById("simplemodeid").checked)
+	{
+		createCookie("mode",'simple');
+		$(location).attr('href', './takephotos.html');
+	}
+	else if(document.getElementById("specialmodesid").checked)
+	{
+		createCookie("mode",'special');
+		$(location).attr('href', './info.html');
+	}
   });
 });
 

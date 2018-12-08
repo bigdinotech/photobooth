@@ -1,6 +1,7 @@
 var timeoutHandler;
 var mode;
 var imageTaken = [false, false, false, false];
+var cameraLock = false;
 
 
 $(document).ready(function() {
@@ -19,52 +20,72 @@ $(document).ready(function() {
   });
   
   $('#iframeContainer0').click(function() {
-    var filename = 'image0.jpg'
-	window.clearTimeout(timeoutHandler);
-	timeoutHandler = window.setTimeout(30000);
+    if(!cameraLock)
+	{
+		cameraLock = true;
+		var filename = 'image0.jpg'
+		window.clearTimeout(timeoutHandler);
+		timeoutHandler = window.setTimeout(30000);
 
-	document.getElementById('imageframe0').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() {
-	  imageTaken[0] = true;
-	  takePhoto(filename);
-	  document.getElementById('imageframe0').contentWindow.document.location.href="image0.php";
-	}, 5000);
+		document.getElementById('imageframe0').contentWindow.document.location.href="countdown.html";
+		setTimeout(function() {
+		  imageTaken[0] = true;
+		  takePhoto(filename);
+		  document.getElementById('imageframe0').contentWindow.document.location.href="image0.php";
+		  cameraLock = false;
+		}, 5000);
+    }
   });
   
   $('#iframeContainer1').click(function() {
-    var filename = 'image1.jpg'
-	window.clearTimeout(timeoutHandler);
-	timeoutHandler = window.setTimeout(30000);
-	document.getElementById('imageframe1').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() { 
-	  imageTaken[1] = true;
-	  takePhoto(filename);
-	  document.getElementById('imageframe1').contentWindow.document.location.href="image1.php";
-	}, 5000);
+	if(!cameraLock)
+	{
+		cameraLock = true;
+		var filename = 'image1.jpg'
+		window.clearTimeout(timeoutHandler);
+		timeoutHandler = window.setTimeout(30000);
+		document.getElementById('imageframe1').contentWindow.document.location.href="countdown.html";
+		setTimeout(function() { 
+		  imageTaken[1] = true;
+		  takePhoto(filename);
+		  document.getElementById('imageframe1').contentWindow.document.location.href="image1.php";
+		  cameraLock = false;
+		}, 5000);
+	}
   });
   
   $('#iframeContainer2').click(function() {
-    var filename = 'image2.jpg'
-	window.clearTimeout(timeoutHandler);
-	timeoutHandler = window.setTimeout(30000);
-	document.getElementById('imageframe2').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() {
-      imageTaken[2] = true;		
-	  takePhoto(filename);
-	  document.getElementById('imageframe2').contentWindow.document.location.href="image2.php";
-	}, 5000);
+	if(!cameraLock)
+	{
+		cameraLock = true;
+		var filename = 'image2.jpg'
+		window.clearTimeout(timeoutHandler);
+		timeoutHandler = window.setTimeout(30000);
+		document.getElementById('imageframe2').contentWindow.document.location.href="countdown.html";
+		setTimeout(function() {
+		  imageTaken[2] = true;		
+		  takePhoto(filename);
+		  document.getElementById('imageframe2').contentWindow.document.location.href="image2.php";
+		  cameraLock = false;
+		}, 5000);
+	}
   });
   
   $('#iframeContainer3').click(function() {
-    var filename = 'image3.jpg'
-	window.clearTimeout(timeoutHandler);
-	timeoutHandler = window.setTimeout(30000);
-	document.getElementById('imageframe3').contentWindow.document.location.href="countdown.html";
-	setTimeout(function() {
-      imageTaken[3] = true;	
-	  takePhoto(filename);
-	  document.getElementById('imageframe3').contentWindow.document.location.href="image3.php";
-	}, 5000);
+	if(!cameraLock)
+	{
+		cameraLock = true;
+		var filename = 'image3.jpg'
+		window.clearTimeout(timeoutHandler);
+		timeoutHandler = window.setTimeout(30000);
+		document.getElementById('imageframe3').contentWindow.document.location.href="countdown.html";
+		setTimeout(function() {
+		  imageTaken[3] = true;	
+		  takePhoto(filename);
+		  document.getElementById('imageframe3').contentWindow.document.location.href="image3.php";
+		  cameraLock = false;
+		}, 5000);
+	}
   });
   
 });
@@ -95,6 +116,13 @@ function takePhoto(filename){
 				}
 			}
 		}
+		else if(mode == "twoframe")
+		{
+			if(imageTaken[0] && imageTaken[1])
+			{
+				document.getElementById('buttontd').style.visibility = "visible";
+			}
+		}
 		else
 		{
 			if(imageTaken[0] && imageTaken[1] && imageTaken[2] && imageTaken[3])
@@ -112,6 +140,10 @@ function takePhotos(){
 	if(mode == "logo")
 	{
 		photoCount = 3;
+	}
+	else if(mode == "twoframe")
+	{
+		photocount = 2;
 	}
 	else
 	{
@@ -138,7 +170,10 @@ function takePhotos(){
 			setTimeout(function() {
 			  document.getElementById('instructiontd').innerHTML= "<p><strong>RETAKING</strong>: Click on the desired picture to be retaken.</p><p><strong>PRINT</strong>: Click on the Print button.</p>";
 		      document.getElementById('buttontd').style.visibility = "visible";
-			  document.getElementById('customizebutton').style.visibility = "visible";
+			  if(readCookie("multilogo") == "y")
+			  {
+			    document.getElementById('customizebutton').style.visibility = "visible";
+			  }
 	        }, 12000);
 			enableRetake();
 		  }
@@ -158,16 +193,25 @@ function takeanddisplayphoto(index) {
 
 function initializePhotoGrid() {
 	mode = readCookie("mode");
-	document.getElementById('imageframe0').contentWindow.document.location.href="imageplaceholder.php";
-	document.getElementById('imageframe1').contentWindow.document.location.href="imageplaceholder.php";
-	document.getElementById('imageframe2').contentWindow.document.location.href="imageplaceholder.php";
 	if(mode == "logo")
 	{
+		document.getElementById('imageframe0').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe1').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe2').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe3').contentWindow.document.location.href="imagelogo.php";
+	}
+	else if(mode == "twoframe")
+	{
+		document.getElementById('imageframe0').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe1').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe2').contentWindow.document.location.href="imagelogo.php";
 		document.getElementById('imageframe3').contentWindow.document.location.href="imagelogo.php";
 	}
 	else
 	{
-		
+		document.getElementById('imageframe0').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe1').contentWindow.document.location.href="imageplaceholder.php";
+		document.getElementById('imageframe2').contentWindow.document.location.href="imageplaceholder.php";
 		document.getElementById('imageframe3').contentWindow.document.location.href="imageplaceholder.php";
 	}
 	document.getElementById('buttontd').style.visibility = "hidden";
@@ -192,6 +236,11 @@ function enableRetake()
 	mode = readCookie("mode");
 	if(mode == "logo")
 	{
+		document.getElementById('iframeContainer3').style.pointerEvents = 'none';
+	}
+	else if(mode == "twoframe")
+	{
+		document.getElementById('iframeContainer2').style.pointerEvents = 'none';
 		document.getElementById('iframeContainer3').style.pointerEvents = 'none';
 	}
 	else

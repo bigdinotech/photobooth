@@ -1,0 +1,13 @@
+rm $filename
+rm stage1.jpg
+rm stage2.jpg
+rm stage3.jpg
+rm stage4.jpg
+
+composite -geometry +0+0 image0.jpg blank.png stage1.jpg
+composite -geometry +910+300 image1.jpg stage1.jpg stage2.jpg
+convert -background 'rgba(255,255,255,255)' -rotate -45 stage2.jpg stage3.jpg
+convert stage3.jpg -resize 1500x1500 stage3.jpg
+mogrify -crop 1500x1200+0+150 stage3.jpg
+composite -geometry +33+0 stage3.jpg blank.png stage4.jpg
+composite -geometry +0+0 $logoname stage4.jpg $filename

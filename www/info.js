@@ -10,6 +10,11 @@ $(document).ready(function() {
   {
 	$(location).attr('href', './takephotos.html');
   }
+  else if (mode == "special")
+  {
+	document.cookie = 'mode = twoframe';
+	$(location).attr('href', './takephotos.html');
+  }
   var gif = readCookie("enablegif");
   if(gif == "n")
   {
